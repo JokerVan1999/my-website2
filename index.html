@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预约登记卡</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            text-align: center;
+            color: #8b5e34;
+        }
+        .container label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        .container input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .container .submit-btn {
+            background-color: #8b5e34;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .container .submit-btn:hover {
+            background-color: #71492c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>预约登记卡</h1>
+    <form action="submit_form.php" method="POST">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="age">年龄：</label>
+        <input type="number" id="age" name="age" required>
+        
+        <label for="phone">电话：</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="department">科室：</label>
+        <input type="text" id="department" name="department" required>
+        
+        <label for="appointment_number">预约号：</label>
+        <input type="text" id="appointment_number" name="appointment_number" required>
+        
+        <label for="appointment_date">预约日期：</label>
+        <input type="date" id="appointment_date" name="appointment_date" required>
+        
+        <button type="submit" class="submit-btn">提交</button>
+    </form>
+</div>
+
+</body>
+</html>

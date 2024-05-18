@@ -1,0 +1,28 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $age = htmlspecialchars($_POST['age']);
+    $phone = htmlspecialchars($_POST['phone']);
+    $department = htmlspecialchars($_POST['department']);
+    $appointment_number = htmlspecialchars($_POST['appointment_number']);
+    $appointment_date = htmlspecialchars($_POST['appointment_date']);
+
+    $to = "willybesaw10@gmail.com"; 
+    $subject = "新的预约登记";
+    $message = "
+    姓名: $name\n
+    年龄: $age\n
+    电话: $phone\n
+    科室: $department\n
+    预约号: $appointment_number\n
+    预约日期: $appointment_date
+    ";
+    $headers = "From: no-reply@example.com";
+
+    if (mail($to, $subject, $message, $headers)) {
+        echo "预约成功！";
+    } else {
+        echo "预约失败，请重试。";
+    }
+}
+?>
